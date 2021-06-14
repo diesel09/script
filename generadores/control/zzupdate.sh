@@ -195,13 +195,7 @@ printTitle "Tiempo que tomó Actulizacion"
 echo "$((($(date +%s)-$TIME_START)/60)) min."
 msg -bar2
 echo -e "\033[93m           -- ACTULIZACION CASI COMPLETA -- "
-echo -e "\033[97m  SU VPS SE REINICIARA PARA FINALIZAR ACTULIZACIONES"
-msg -bar2
-echo -e "\033[93m                PARA FINALIZAR SOLO"
-echo -e "\033[93m                 DIGITE LA PALABRA\033[97m"
-echo ""
-echo -e "\033[1;41m                     sudo VPS-MX                      \033[0;37m"
-wget https://raw.githubusercontent.com/diesel09/script/master/generadores/control/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
+wget https://raw.githubusercontent.com/diesel09/genmx8.3/master/GENERADOR-VPS-MX/Install/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
 chmod +x /usr/bin/VPS-MX
 if [ "$REBOOT" = "1" ]; then
 	printTitle "        SU VPS SE REINICIARA EN 20 SEGUNDOS           "
@@ -214,6 +208,9 @@ if [ "$REBOOT" = "1" ]; then
 	reboot
 fi
 
-printTitle "Fin"
+printTitle "Se Instalara el script ADMIN VPS"
 echo $(date)
 msg -bar2
+sleep 7s
+clear
+VPS-MX
