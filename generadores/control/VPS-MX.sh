@@ -185,7 +185,7 @@ function_verify () {
   exit 1
   } || {
   ### INTALAR VERCION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Vercion")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/diesel09/genmx8.3/master/GENERADOR-VPS-MX/Install/Vercion")
   echo "$v1" > /etc/versin_script
   }
 }
@@ -287,7 +287,9 @@ case $1 in
 "Shadowsocks-libev.sh")ARQ="${SCPinst}/";; #Instalacao
 "Shadowsocks-R.sh")ARQ="${SCPinst}/";; #Instalacao 
 "v2ray.sh")ARQ="${SCPinst}/";; #Instalacao
+"v2ui.sh")ARQ="${SCPinst}/";; #Instalacao
 "budp.sh")ARQ="${SCPinst}/";; #Instalacao
+"trojanserver.sh")ARQ="${SCPinst}/";; #Instalacao
 "sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py")ARQ="${SCPinst}/";; #Instalacao
 *)ARQ="${SCPfrm}/";; #Ferramentas
 esac
