@@ -47,6 +47,7 @@ apt-get install mlocate -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "mlocate"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
 [[ $(dpkg --get-selections|grep -w "mlocate"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 echo -e "\033[97m    # apt-get install mlocate......... $ESTATUS "
+#lolcat gem
 apt-get install lolcat -y &>/dev/null
 sudo gem install lolcat &>/dev/null
 [[ $(dpkg --get-selections|grep -w "lolcat"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
@@ -146,7 +147,6 @@ apt-get install cowsay
 apt-get install bc
 apt-get install python
 apt-get install at 
-sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart
 clear
 msg -bar2
@@ -369,7 +369,7 @@ function_verify
 updatedb
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "KEY INVALIDA!") ]]; then
    msg -bar2
-   msg -verd "$(source trans -b es:${id} " INSTALANDO"|sed -e 's/[^a-z -]//ig'): \033[1;31m[VPS-MX #MOD by @Kalix1]"
+   msg -verd "$(source trans -b es:${id} " GRACIAS POR ADQUIRIR TU SERIAL"|sed -e 's/[^a-z -]//ig'): \033[1;31m[ADMIN VPS]"
    REQUEST=$(ofus "$Key"|cut -d'/' -f2)
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="."
@@ -391,11 +391,11 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "KEY INVALIDA!") 
    echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
-   echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"
-   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)"
+   #echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"
+   #echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)"
    msg -bar2
-   read -p " [ s | n ]: " NOTIFY   
-   [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
+   #read -p " [ s | n ]: " NOTIFY   
+   #[[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
    msg -bar2
    [[ ${byinst} = "true" ]] && install_fim
 else
