@@ -7,6 +7,7 @@ SCPidioma="${SCPdir}/idioma"
 SCPusr="${SCPdir}/ger-user"
 SCPfrm="/etc/ger-frm"
 SCPinst="/etc/ger-inst"
+fecha=`date`;
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 service apache2 restart > /dev/null 2>&1
@@ -189,15 +190,15 @@ function_verify () {
   echo "$v1" > /etc/versin_script
   }
 }
-vp (){
-echo "
+#vp (){
+#echo "
+#
+ # █░░▒█ █▀▀█ █▀▀▀█ ░░ █▀▄▀█ ▀▄▒▄▀
+ #▒█▒█░ █▄▄█ ▀▀▀▄▄ ▀▀ █▒█▒█ ░▒█░░
+ #░▀▄▀░ █░░░ █▄▄▄█ ░░ █░░▒█ ▄▀▒▀▄
 
-  █░░▒█ █▀▀█ █▀▀▀█ ░░ █▀▄▀█ ▀▄▒▄▀
- ▒█▒█░ █▄▄█ ▀▀▀▄▄ ▀▀ █▒█▒█ ░▒█░░
- ░▀▄▀░ █░░░ █▄▄▄█ ░░ █░░▒█ ▄▀▒▀▄
-
-"
-}
+#"
+#}
 funcao_idioma () {
 msg -bar2
 vp
@@ -228,12 +229,12 @@ echo "exit 0" >> /etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
-vp >> .bashrc
-#echo 'echo -e "\033[91m      __     ______  ____        __  ____  __ " '>> .bashrc
-#echo 'echo -e "\033[91m      \ \   / /  _ \/ ___|      |  \/  \ \/ / " '>> .bashrc
-#echo 'echo -e "\033[91m       \ \ / /| |_) \___ \ _____| |\/| |\  /  " '>> .bashrc
-#echo 'echo -e "\033[91m        \ V / |  __/ ___) |_____| |  | |/  \  " '>> .bashrc
-#echo 'echo -e "\033[91m         \_/  |_|   |____/      |_|  |_/_/\_\ " '>> .bashrc
+#vp >> .bashrc
+echo 'echo -e "\033[91m     _    ____  __  __ ___ _   _  __     ______  ____  " '>> .bashrc
+echo 'echo -e "\033[91m    / \  |  _ \|  \/  |_ _| \ | | \ \   / /  _ \/ ___|  " '>> .bashrc
+echo 'echo -e "\033[91m   / _ \ | | | | |\/| || ||  \| |  \ \ / /| |_) \___ \  " '>> .bashrc
+echo 'echo -e "\033[91m  / ___ \| |_| | |  | || || |\  |   \ V / |  __/ ___) |  " '>> .bashrc
+echo 'echo -e "\033[91m /_/   \_\____/|_|  |_|___|_| \_|    \_/  |_|   |____/  " '>> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'mess1="$(less /etc/newadm/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
@@ -241,6 +242,10 @@ echo 'echo -e "\033[92m        RESELLER : $mess1 "'>> .bashrc
 echo 'echo "" '>> .bashrc                                               
 echo 'echo -e "\033[97m   PARA MOSTAR PANEL BASH ESCRIBA:  sudo menu "'>> .bashrc
 #echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Vercion &>/dev/null'>> .bashrc
+echo 'echo ""'>> .bashrc
+echo 'echo -e "	\e[44;1;37mNombre del Servidor\e[0m : \e[1;33m $HOSTNAME \e[0m"' >> .bashrc
+echo 'echo -e "	\e[44;1;37mFecha del Servidor\e[0m : \e[1;33m $DATE \e[0m"' >> .bashrc
+echo 'echo -e "	\e[44;1;37mHora del Servidor\e[0m : \e[1;33m $TIME \e[0m"' >> .bashrc
 echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "\033[1;41m                     menu                        \033[0;37m" && msg -bar2
