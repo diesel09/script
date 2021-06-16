@@ -201,8 +201,9 @@ function_verify () {
 #}
 funcao_idioma () {
 msg -bar2
-vp
-echo -e "     ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑOL"
+#vp
+figlet " ADMIN VPS " | lolcat
+echo -e "     Adquiera su serial y apoye al desarrollador"
 msg -bar2
 pv="$(echo es)"
 [[ ${#id} -gt 2 ]] && id="es" || id="$pv"
