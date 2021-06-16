@@ -228,6 +228,8 @@ echo "sleep 2s" >> /etc/rc.local
 echo "exit 0" >> /etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >> .bashrc
+echo 'DATE=$(date +"%d-%m-%y")' >> .bashrc
+echo 'TIME=$(date +"%T")' >> .bashrc
 echo 'echo ""' >> .bashrc
 #vp >> .bashrc
 echo 'echo -e "\033[91m     _    ____  __  __ ___ _   _  __     ______  ____  " '>> .bashrc
