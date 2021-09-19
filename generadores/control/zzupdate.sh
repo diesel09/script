@@ -191,10 +191,10 @@ apt-get autoremove -y
 printTitle "Versión actual"
 lsb_release -d
 
-printTitle "Tiempo que tomó Actulizacion"
+printTitle "Tiempo que tomó Actualizacion"
 echo "$((($(date +%s)-$TIME_START)/60)) min."
 msg -bar2
-echo -e "\033[93m           -- ACTULIZACION CASI COMPLETA -- "
+echo -e "\033[93m           -- ACTUALIZACION CASI COMPLETA -- "
 wget https://raw.githubusercontent.com/diesel09/script/master/generadores/control/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
 chmod +x /usr/bin/VPS-MX
 if [ "$REBOOT" = "1" ]; then
@@ -208,7 +208,7 @@ if [ "$REBOOT" = "1" ]; then
 	reboot
 fi
 
-printTitle "Se Instalara el script ADMIN VPS"
+printTitle "Se Instalara el Script ADMIN VPS"
 echo $(date)
 msg -bar2
 sleep 7s
