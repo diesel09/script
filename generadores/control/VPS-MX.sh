@@ -122,11 +122,6 @@ echo -e "\033[97m    # apt-get install unzip........... $ESTATUS "
 #zip
 [[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || apt-get install zip -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
-[[ $(dpkg --get-selections|grep -w "zip"|head -1) ] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
-echo -e "\033[97m    # apt-get install zip............. $ESTATUS "
-#zip
-[[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || apt-get install zip -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
 [[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 #apache2
 [[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] || {
