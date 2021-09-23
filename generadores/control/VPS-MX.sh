@@ -122,8 +122,12 @@ echo -e "\033[97m    # apt-get install unzip........... $ESTATUS "
 #zip
 [[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || apt-get install zip -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
-[[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
+[[ $(dpkg --get-selections|grep -w "zip"|head -1) ] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 echo -e "\033[97m    # apt-get install zip............. $ESTATUS "
+#zip
+[[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || apt-get install zip -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
+[[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 #apache2
 [[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] || {
  apt-get install apache2 -y &>/dev/null
@@ -133,6 +137,14 @@ echo -e "\033[97m    # apt-get install zip............. $ESTATUS "
 [[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
 [[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 echo -e "\033[97m    # apt-get install apache2......... $ESTATUS "
+msg -bar2
+echo -e "\033[97m    ◽️ INTENTANDO RECONFIGURAR UPDATER "
+fun_bar " dpkg --configure -a > /dev/null 2>&1 "
+echo -e "\033[97m    ◽️ INSTALANDO S-P-C "
+fun_bar " apt-get install software-properties-common -y > /dev/null 2>&1"
+echo -e "\033[97m    ◽️ DESACTIVANDO PASS ALFANUMERICO "
+sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password > /dev/null 2>&1 
+fun_bar "service ssh restart > /dev/null 2>&1 "
 sleep 3s
 clear
 ### FIXEADOR PARA SISTEMAS 86_64
