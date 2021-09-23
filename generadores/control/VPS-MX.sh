@@ -376,8 +376,7 @@ function_verify
 updatedb
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "KEY INVALIDA!") ]]; then
    msg -bar2
-   #msg -verd "$(source trans -b es:${id} " GRACIAS POR ADQUIRIR TU SERIAL"|sed -e 's/[^a-z -]//ig'): \033[1;31m[ADMIN VPS]"
-   msg -verd "$( -b es:${id} " GRACIAS POR ADQUIRIR TU SERIAL"|sed -e 's/[^a-z -]//ig'): \033[1;31m[ADMIN VPS]"
+   msg -verd "$(source trans -b es:${id} " GRACIAS POR ADQUIRIR TU SERIAL"|sed -e 's/[^a-z -]//ig'): \033[1;31m[ADMIN VPS]"
    REQUEST=$(ofus "$Key"|cut -d'/' -f2)
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="."
