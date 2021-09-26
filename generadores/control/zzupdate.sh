@@ -19,7 +19,7 @@ rm -rf instalscript.sh
 SCRIPT_NAME=vpsmxup
 
 ## Title and graphics
-echo "         VPS-MX - $(date)"
+echo "         ADMIN VPS - $(date)"
 msg -bar2
 
 ## Enviroment variables
