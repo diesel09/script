@@ -410,7 +410,7 @@ wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/diesel09/AdminVPS2/
 chmod +x /bin/Desbloqueo.sh
 wget -O /bin/monitor.sh https://raw.githubusercontent.com/lacasitamx/rex/master/moni/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
-wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
+wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/diesel09/script/master/Install/estilos.css &> /dev/null
 msg -bar2
 msg -ama "     [ SCRIPT - ADMIN VPS \033[1;97m VERSION ACTUALIZADA\033[1;33m ]"
 msg -ama "  \033[1;96m      🔰Usar Ubuntu 18 a 64 De Preferencia🔰 "
