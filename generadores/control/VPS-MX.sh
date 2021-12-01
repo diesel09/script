@@ -406,7 +406,7 @@ echo -e "\033[1;34mSE ENVIO MENSAJE DE PRUEBA SI NO LLEGA CONTACTE A @Kalix1 "
 }
 fun_ip
 wget -O /usr/bin/trans https://raw.githubusercontent.com/diesel09/AdminVPS2/main/trans &> /dev/null
-wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/Desbloqueo.sh &> /dev/null
+wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/diesel09/AdminVPS2/main/Desbloqueo.sh &> /dev/null
 chmod +x /bin/Desbloqueo.sh
 wget -O /bin/monitor.sh https://raw.githubusercontent.com/lacasitamx/rex/master/moni/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
