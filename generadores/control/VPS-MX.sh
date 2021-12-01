@@ -408,7 +408,7 @@ fun_ip
 wget -O /usr/bin/trans https://raw.githubusercontent.com/diesel09/AdminVPS2/main/trans &> /dev/null
 wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/diesel09/AdminVPS2/main/Desbloqueo.sh &> /dev/null
 chmod +x /bin/Desbloqueo.sh
-wget -O /bin/monitor.sh https://raw.githubusercontent.com/lacasitamx/rex/master/moni/monitor.sh &> /dev/null
+wget -O /bin/monitor.sh https://raw.githubusercontent.com/diesel09/AdminVPS2/main/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/diesel09/script/master/Install/estilos.css &> /dev/null
 msg -bar2
