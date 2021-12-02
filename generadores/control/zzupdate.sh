@@ -206,7 +206,7 @@ chmod +x /usr/bin/VPS-MX
 	   #: $((REBOOT_TIMEOUT--))
 	#done
 	#reboot
-fi
+#fi
 
 printTitle "Se Instalara el Script ADMIN VPS"
 echo $(date)
