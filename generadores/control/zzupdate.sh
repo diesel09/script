@@ -197,14 +197,14 @@ msg -bar2
 echo -e "\033[93m           -- ACTUALIZACION CASI COMPLETA -- "
 wget https://raw.githubusercontent.com/diesel09/script/master/generadores/control/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
 chmod +x /usr/bin/VPS-MX
-if [ "$REBOOT" = "1" ]; then
-	printTitle "        SU VPS SE REINICIARA EN 20 SEGUNDOS           "
+#if [ "$REBOOT" = "1" ]; then
+	#printTitle "        SU VPS SE REINICIARA EN 20 SEGUNDOS           "
 	
-	while [ $REBOOT_TIMEOUT -gt 0 ]; do
-	   echo -ne "                         -$REBOOT_TIMEOUT-\033[0K\r"
-	   sleep 1
-	   : $((REBOOT_TIMEOUT--))
-	done
+	#while [ $REBOOT_TIMEOUT -gt 0 ]; do
+	   #echo -ne "                         -$REBOOT_TIMEOUT-\033[0K\r"
+	   $sleep 1
+	   #: $((REBOOT_TIMEOUT--))
+	#done
 	#reboot
 fi
 
