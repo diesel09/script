@@ -14,9 +14,9 @@ service apache2 restart > /dev/null 2>&1
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
 mkdir -p /etc/B-ADMuser &>/dev/null
-rm -rf /etc/localtime &>/dev/null
+#rm -rf /etc/localtime &>/dev/null
 #ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
-ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
+#ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
 rm $(pwd)/$0 &> /dev/null
 ### COLORES Y BARRA 
 msg () {
@@ -158,10 +158,10 @@ echo -e "\033[97m    # apt-get install cowsay.......... $ESTATUS "
 [[ $(dpkg --get-selections|grep -w "screen"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
 echo -e "\033[97m    # apt-get install screen.......... $ESTATUS "
 #python
-#[[ $(dpkg --get-selections|grep -w "python"|head -1) ]] || apt-get install python -y &>/dev/null
-#[[ $(dpkg --get-selections|grep -w "python"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
-#[[ $(dpkg --get-selections|grep -w "python"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
-#echo -e "\033[97m    # apt-get install python.......... $ESTATUS "
+[[ $(dpkg --get-selections|grep -w "python"|head -1) ]] || apt-get install python -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "python"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
+[[ $(dpkg --get-selections|grep -w "python"|head -1) ]] && ESTATUS=`echo -e "\033[92mINSTALADO"` &>/dev/null
+echo -e "\033[97m    # apt-get install python.......... $ESTATUS "
 #python3
 [[ $(dpkg --get-selections|grep -w "python3"|head -1) ]] || apt-get install python3 -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "python3"|head -1) ]] || ESTATUS=`echo -e "\033[91mFALLO DE INSTALACION"` &>/dev/null
