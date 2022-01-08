@@ -254,7 +254,7 @@ function_verify () {
   exit 1
   } || {
   ### INTALAR VERCION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/diesel09/AdminVPS2/main/version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/diesel09/AdminVPS2/main/versionN")
   echo "$v1" > /etc/versin_script
   }
 }
