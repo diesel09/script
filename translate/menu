@@ -594,11 +594,6 @@ unset _opti
 _opti="\033[1;32m${txt[10]}"
 
 		fun_bar
-	
-		
-	read -p "Enter para Continuar"
-	;;
-	*)
 	echo "AGREGADA EXITOSAMENTE"
 	read -p 'Presiona una TECLA para continuar..'
 	;;
