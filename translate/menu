@@ -557,8 +557,7 @@ case $rrr in
 	exit
 	;;
 	1)
-	clear
-        auto;
+        auto;;
 auto () {
 opti=0
 echo 0 > /bin/ejecutar/val
