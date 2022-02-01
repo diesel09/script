@@ -596,8 +596,7 @@ _opti="\033[1;32m${txt[10]}"
 		fun_bar
 	echo "AGREGADA EXITOSAMENTE"
 	read -p 'Presiona una TECLA para continuar..'
-	;;
-	esac
+
 }
 
 float_data () {
