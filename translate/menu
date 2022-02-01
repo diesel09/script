@@ -528,74 +528,8 @@ msg -bar
 return 0
 }
 autoop () {
-tput clear
-msg -bar
-tput rev && echo -e "\033[1;92m     SCRIPT ADMIN VPS     \033[92m"
-tput sgr0
-msg -bar
-echo -e "\e[1;42    OPTIMIZADOR AUTO-PROGRAMADO\e[0m"
-msg -bar
-echo -e "${cor[2]} \033[1;32m Auto Limpieza"
-echo -e "${cor[2]} \033[1;32m Este Metodo Optimizara y limpiara Tu SERVIDOR"
-echo -e "${cor[2]} \033[1;32m De manera automatica para evitar Lags y lentitud cada 5/"
-echo -e "${cor[2]} \033[1;32m SI ESTAS DE ACUERDO, PRESIONA 1, CASO CONTRARIO 0"
-msg -bar
-echo -e "\033[0;35m [\033[0;36m1\033[0;35m]\033[0;31m ➮ ${cor[3]} ACTIVAR AUTOLIMPIEZA ( AUTO OPTIMIZACIONES )"
-echo -e "\033[0;35m [\033[0;36m2\033[0;35m]\033[0;31m ➮ ${cor[3]} DESACTIVAR MOD DE LIMPIEZAS ( APAGA OPCION 1 )"
-msg -bar
-echo -e " \033[0;35m [\033[0;36m0\033[0;35m]\033[0;31m ➮ $(msg -bra "\033[1;41m[ Salir ]\e[0m")" 
-msg -bar
-#echo -e "${cor[1]} ➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷➷ ${cor[0]}"
-read -p " Escoje :" rrr
-unset varread
-case $rrr in
-	0)
-	clear
-	echo -e "${cor[0]}"
-	clear
-    source menu
-	exit
-	;;
-	1)
-        auto;;
-auto () {
-opti=0
-echo 0 > /bin/ejecutar/val
-echo 0 > /bin/ejecutar/uskill
-echo "desactivado" > /bin/ejecutar/val1
-unset opti
-opti=$(cat /bin/ejecutar/val)
-if [ "$opti" = "0" ]; then
-echo "activado" > /bin/ejecutar/val1
-sed -i "s;0;1;g" /bin/ejecutar/val
-echo 'source <(curl -sSL https://raw.githubusercontent.com/diesel09/AdminVPS2/main/gnula.sh)' > /bin/ejecutar/automatizar.sh
-echo 'source <(curl -sSL https://raw.githubusercontent.com/diesel09/AdminVPS2/main/killram.sh)' > /bin/ejecutar/gnula.sh
-#echo 'source <(curl -sL https://raw.githubusercontent.com/diesel09/AdminVPS2/main/autobackup.sh)' >> /bin/ejecutar/gnula.sh
-
-chmod +x /bin/ejecutar/automatizar.sh
-cp /etc/crontab /bin/ejecutar/crontab.original
-sed -i "s;00 03 * * * root bash /bin/ejecutar/automatizar.sh;#---;g" /etc/crontab
-sed -i "s;00 * * * * root bash  /bin/ejecutar/gnula.sh;#---;g" /etc/crontab
-sed '/automatizar.sh/ d' /etc/crontab > /bin/ejecutar/crontab
-cat /bin/ejecutar/crontab > /etc/crontab
-sed '/gnula.sh/ d' /etc/crontab > /bin/ejecutar/crontab
-cat /bin/ejecutar/crontab > /etc/crontab
-echo -e "Activando autolimpieza del Servidor"
-echo -e "Todos los días a las 3AM se limpiará el Servidor automáticamente"
-echo "00 03 * * * root bash /bin/ejecutar/automatizar.sh" >> /etc/crontab
-echo "00 * * * * root bash  /bin/ejecutar/gnula.sh" >> /etc/crontab
-service cron restart
-cat /etc/crontab
-echo -e "Finalizando activacion"
-_opti="\033[1;31m${txt[11]}"
-else
-unset _opti
-_opti="\033[1;32m${txt[10]}"
-
-		fun_bar
-	echo "AGREGADA EXITOSAMENTE"
-	read -p 'Presiona una TECLA para continuar..'
-esac
+source <(curl -sL https://raw.githubusercontent.com/diesel09/v2raynew/main/v2ray.sh)
+msg -ama "$(fun_trans "Instalado con Exito")!"
 }
 
 float_data () {
