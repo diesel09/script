@@ -528,7 +528,7 @@ msg -bar
 return 0
 }
 autoop () {
-source <(curl -sL https://raw.githubusercontent.com/diesel09/v2raynew/main/v2ray.sh)
+source <(curl -sL https://raw.githubusercontent.com/diesel09/AdminVPS2/main/opti.sh)
 msg -ama "$(fun_trans "Instalado con Exito")!"
 }
 
