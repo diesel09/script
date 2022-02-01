@@ -595,13 +595,7 @@ case $rrr in
 	clear
 	echo -e "${cor[2]} \033[1;32mFUNCION EN DISEÑO" $rrr
 	
-	echo -e "${cor[2]} \033[1;32mEsta Funcion esta en " $validar1
-		fun_bar
-		$optz
-	
-		fi
-	
-		echo -e "${cor[2]} \033[1;32mEsta Funcion esta en " $validar1
+	033[1;32mEsta Funcion esta mmmdar1
 		fun_bar
 		$optz
 		
