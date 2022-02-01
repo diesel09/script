@@ -594,18 +594,13 @@ case $rrr in
 	1)
 	clear
 	echo -e "${cor[2]} \033[1;32mFUNCION EN DISEÑO" $rrr
-	validar1=$(cat < /bin/ejecutar/val1)
-	if [ "$validar1" = "activado" ]; then
-	echo "desactivado" > /bin/ejecutar/val1
-	echo "0" > /bin/ejecutar/val
+	
 	echo -e "${cor[2]} \033[1;32mEsta Funcion esta en " $validar1
 		fun_bar
 		$optz
 	
 		fi
 	
-	echo "desactivado" > /bin/ejecutar/val1
-	echo "0" > /bin/ejecutar/val
 		echo -e "${cor[2]} \033[1;32mEsta Funcion esta en " $validar1
 		fun_bar
 		$optz
