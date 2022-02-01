@@ -558,9 +558,9 @@ case $rrr in
 	;;
 	1)
 	clear
-	echo -e "${cor[2]} \033[1;32mFUNCION EN DISEÑO" $rrr
-	
-	opti=0
+        auto;
+auto () {
+opti=0
 echo 0 > /bin/ejecutar/val
 echo 0 > /bin/ejecutar/uskill
 echo "desactivado" > /bin/ejecutar/val1
