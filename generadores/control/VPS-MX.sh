@@ -246,6 +246,21 @@ MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1
 MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 }  
+fun_ipe () { 
+MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1) 
+MIP2=$(wget -qO- ifconfig.me) 
+[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP" 
+} 
+fun_ip () { 
+MIP2=$(wget -qO- ifconfig.me) 
+MIP=$(wget -qO- whatismyip.akamai.com) 
+if [ $? -eq 0 ]; then 
+IP="$MIP" 
+else 
+IP="$MIP2" 
+fi 
+} 
+
 function_verify () {
   permited=$(curl -sSL "https://raw.githubusercontent.com/diesel09/vpsbotchumo2.0/main/TeleBotGen/Control/Control-Bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
