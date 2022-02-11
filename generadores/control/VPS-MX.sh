@@ -262,7 +262,7 @@ fi
 } 
 
 function_verify () {
-  permited=$(curl -sSL "https://raw.githubusercontent.com/diesel09/vpsbotchumo2.0/main/TeleBotGen/Control/Control-Bot")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/diesel09/AdminVPS2/main/Control-Bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   echo -e "\n\n\n\033[1;95m======================================================\n ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR!,CONTACTE A @FelipeCouoh ;)\n======================================================\n"
   [[ -d /etc/newadm ]] && rm -rf /etc/newadm
