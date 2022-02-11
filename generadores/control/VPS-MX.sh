@@ -241,7 +241,7 @@ msg -bar2
 read -p " [ S | N ]: " idfix64_86   
 [[ "$idfix64_86" = "s" || "$idfix64_86" = "S" ]] && idfix64_86
 clear
-fun_ip2 () {
+fun_ip () {
 MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
 MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
@@ -251,7 +251,7 @@ MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1
 MIP2=$(wget -qO- ifconfig.me) 
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP" 
 } 
-fun_ip () { 
+fun_ip2 () { 
 MIP2=$(wget -qO- ifconfig.me) 
 MIP=$(wget -qO- whatismyip.akamai.com) 
 if [ $? -eq 0 ]; then 
@@ -353,8 +353,8 @@ number=$(expr length $1)
 for((i=1; i<$number+1; i++)); do
 txt[$i]=$(echo "$1" | cut -b $i)
 case ${txt[$i]} in
-".")txt[$i]="*";;
-"*")txt[$i]=".";;
+".")txt[$i]="+";;
+"+")txt[$i]=".";;
 "1")txt[$i]="@";;
 "@")txt[$i]="1";;
 "2")txt[$i]="?";;
