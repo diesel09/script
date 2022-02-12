@@ -40,22 +40,12 @@ mv -f $HOME/$1 ${ARQ}/$1
 chmod +x ${ARQ}/$1
 }
 echo -e "\033[1;36m--------------------------------------------------------------------\033[0m"
-#fun_ip () {
-#MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
-#MIP2=$(wget -qO- ipv4.icanhazip.com)
-#[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
-#echo "$IP" > /usr/bin/vendor_code
-#}
-fun_ip () { 
-MIP2=$(wget -qO- ifconfig.me) 
-MIP=$(wget -qO- whatismyip.akamai.com) 
-if [ $? -eq 0 ]; then 
-IP="$MIP" 
-else 
-IP="$MIP2" 
+fun_ip () {
+MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MIP2=$(wget -qO- ipv4.icanhazip.com)
+[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 echo "$IP" > /usr/bin/vendor_code
-fi 
-} 
+}
 function_verify () {
   permited=$(curl -sSL "https://raw.githubusercontent.com/diesel09/AdminVPS2/main/Control-IP")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
