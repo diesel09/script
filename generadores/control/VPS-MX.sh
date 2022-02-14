@@ -304,14 +304,14 @@ wget -O /bin/resetsshdrop https://raw.githubusercontent.com/diesel09/AdminVPS2/m
 chmod +x /bin/resetsshdrop
 wget -O /etc/versin_script_new https://raw.githubusercontent.com/diesel09/AdminVPS2/main/versionN &>/dev/null
 msg -bar2
-#echo -e "	\e[1;44mCAMBIAR  RESELLER\e[0m"
-#msg -bar
-#echo ""
-#read -p "Escriba su nuevo Reseller: " creditresell
-#echo "$creditresell" > /etc/newadm/message.txt
-#msg -bar
-#echo "NUEVO RESELLER AGREGADO CON EXITO"
-#msg -bar
+echo -e "	\e[1;44mCAMBIAR  RESELLER\e[0m"
+msg -bar
+echo ""
+read -p "Escriba su nuevo Reseller: " creditresell
+echo "$creditresell" > /etc/newadm/message.txt
+msg -bar
+echo "NUEVO RESELLER AGREGADO CON EXITO"
+msg -bar
 echo '#!/bin/sh -e' > /etc/rc.local
 sudo chmod +x /etc/rc.local
 echo "sudo rebootnb" >> /etc/rc.local
