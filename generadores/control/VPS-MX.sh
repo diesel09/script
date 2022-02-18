@@ -449,7 +449,7 @@ msg -bar2 && msg -verm "ERROR de enlace VPS<-->GENERADOR" && msg -bar2
 exit 1
 }
 invalid_key () {
-msg -bar2 && msg -verm "#¡Key Invalida#! " && msg -bar2
+msg -bar2 && msg -verm "¡Key Invalida, Usada o Expirada! " && msg -bar2
 #[[ -e $HOME/lista-arq ]] && rm $HOME/lista-arq
 #exit 1
 
