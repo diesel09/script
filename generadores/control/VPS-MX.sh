@@ -462,7 +462,7 @@ cd $HOME
 wget -O $HOME/lista-arq $(ofus "$Key")/$IP > /dev/null 2>&1 && echo -e "\033[1;32m Key Completa" || {
    echo -e "\033[1;91m Key Incompleta"
    invalid_key
-   exit
+   
    }
 }
 
