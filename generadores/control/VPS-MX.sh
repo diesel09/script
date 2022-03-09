@@ -83,12 +83,26 @@ service ssh restart > /dev/null 2>&1
 echo -e "\033[97m    ◽️ DESACTIVANDO PASS ALFANUMERICO "
 sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password > /dev/null 2>&1 
 fun_bar "service ssh restart > /dev/null 2>&1 "
+rootvps(){ 
+echo -e "\033[31m     OPTENIENDO ACCESO ROOT    " 
+wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/root.sh &>/dev/null -O /usr/bin/rootlx &>/dev/null 
+chmod 775 /usr/bin/rootlx &>/dev/null 
+rootlx 
+clear 
+echo -e "\033[31m     ACCESO ROOT CON ÉXITO    " 
+sleep 1 
+} 
+msg -bar 
+echo -e "\033[1;37m  DESEA ACTIVAR EL ACCESO ROOT A TU VPS?\n  ESTO SOLO FUNCIONA PARA (AWS,GOOGLECLOUD,AZURE,ETC)\n  SI YA TIENES ACCESO SOLO IGNORA ESTE MENSAJE\n PRESIONE ENTER PARA IGNORAR..." 
+msg -bar 
+read -p "Responde [ s | n ]: " -e -i n rootvps 
+[[ "$rootvps" = "s" || "$rootvps" = "S" ]] && rootvps 
 msg -bar2
 #echo -e "${cor[2]} VERIFICAR POSIBLE ACTUALIZACION DE S.O (Default n)"
 #echo -e "\033[1;34m     (Este proceso puede demorar mucho Tiempo)"
 #msg -bar2
 #read -p "   [ s | n ]: " -e -i n updater   
-[[ "$updater" = "s" || "$updater" = "S" ]] && updater
+#[[ "$updater" = "s" || "$updater" = "S" ]] && updater
 #msg -bar2
 #echo -e "\033[93m              AGREGAR/EDITAR PASS ROOT\033[97m" 
 #msg -bar
