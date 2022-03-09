@@ -436,6 +436,7 @@ chmod +x /bin/Desbloqueo.sh
 wget -O /bin/monitor.sh https://raw.githubusercontent.com/diesel09/AdminVPS2/main/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/diesel09/script/master/Install/estilos.css &> /dev/null
+[[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp ; ufw allow 81/tcp &>/dev/null 
 msg -bar2
 msg -ama "     [ SCRIPT - ADMIN VPS \033[1;97m VERSION ACTUALIZADA\033[1;33m ]"
 msg -ama "  \033[1;96m      🔰Usar Ubuntu 18 a 64 De Preferencia🔰 "
