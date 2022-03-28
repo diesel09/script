@@ -21,7 +21,7 @@ clear
 cd $HOME
 tput cuu1 && tput dl1
 msg -bar
-msg -ama "HOLA! \033[1;32m[ EJECUTANDO ]  \033[1;33m[\033[1;34m Generador \033[1;33m] \033[1;31m[\033[1;37m Admin Vps\033[1;31m]"
+msg -ama "HOLA! \033[1;32m[ INSTALANDO ]  \033[1;33m[\033[1;34m Generador de keys \033[1;33m] \033[1;31m[\033[1;37m Admin Vps\033[1;31m]"
 echo " "
 msg -verm "El instalador necesita autorizacion de IP vía remota "
 msg -verm "Contacte al Administrador @FelipeCouoh "
