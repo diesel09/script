@@ -79,8 +79,8 @@ sleep 2s
 #rm -rf VPS-MX
 #msg -bar
 else
-#msg -verm "Procedimiento Cancelado: "
-#msg -bar
+msg -verm "Procedimiento Cancelado: "
+msg -bar
 fi
 }
 ofus () {
