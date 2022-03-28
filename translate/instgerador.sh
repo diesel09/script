@@ -4,6 +4,71 @@ SCPT_DIR="/etc/SCRIPT"
 SCPresq="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2RpZXNlbDA5L0FkbWluVlBTMi9tYXN0ZXIvZ2VyYWRvcg=="
 SUB_DOM='base64 -d'
 rm $(pwd)/$0
+msg -bar
+msg -ama "HOLA! \033[1;32m[ EJECUTANDO ]  \033[1;33m[\033[1;34m VPS-MX \033[1;33m] \033[1;31m[\033[1;37m 8.4G\033[1;31m]"
+echo " "
+msg -verm "Esta opción necesita autorizacion de IP "
+msg -verm "Contacte al administrador @FelipeCouoh "
+msg -verm "Una vez Autorizado puede instalar las veces que desee"
+msg -verm "Este panel es independiente contiene sus propias funciones"
+msg -bar
+while [[ $Key != @(s|S|y|Y|n|N) ]]; do
+msg -ne "Continuar [S/N]: " && read Key
+tput cuu1 && tput dl1
+done
+if [[ $Key = @(s|S|y|Y) ]]; then
+
+lor1='\033[1;31m';lor2='\033[1;32m';lor3='\033[1;33m';lor4='\033[1;34m';lor5='\033[1;35m';lor6='\033[1;36m';lor7='\033[1;37m'
+IP=$(wget -qO- whatismyip.akamai.com)
+[[ "$IP" = "" ]]&& IP="errorp"
+PASS=$(wget -qO- https://raw.githubusercontent.com/diesel09/AdminVPS2/main/Control-IP |grep "$IP" |awk -F : {'print $1'})
+rm -rf instalador.sh
+if [ "$IP" = "$PASS" ]; then
+clear
+else
+echo -e "${lor4}***********************************${lor7}"
+echo -e
+echo -e "\033[97m    ◆ ACCESO NO AUTORIZADO CONTACTAME PARA ACCESOS"
+echo -e "\033[97m    ◆ TELEGRAM: @FelipeCouoh"
+echo -e "\033[97m    ◆ WHATSAPP: +52 982147259"
+echo -e
+echo -e "${lor4}***********************************${lor7}"
+for pid in $(pgrep python);do
+kill $pid
+done
+exit
+exit 0
+fi
+if [ $(id -u) -eq 0 ];then
+clear
+else
+echo -e "Run the script as user${lor2}root${lor7}"
+exit
+fi 
+sleep 2s
+echo -e " \033[1;32m IP AUTORIZADA! "
+sleep 1s
+echo -e " \033[1;32mPerfecto, Iniciando instalacion..."
+#msg -verm "Perfecto, Iniciando Panel: "
+echo " "
+sleep 1s
+echo -e " \033[1;32m[ Adquiera este Script en: ] "
+sleep 1s
+echo -e " \033[1;32m[ Telegram: @KeyVpspremium_bot ] "
+sleep 2s
+#wget -O $HOME/VPS-MX wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX-FREE/main/VPS-MX &> /dev/null
+#chmod +x $HOME/VPS-MX*
+#local LINGUAGE=$(cat ${SCPidioma})
+#$HOME/VPS-MX "${LINGUAGE}"
+wget https://raw.githubusercontent.com/diesel09/gcapital/main/VPS-MX; chmod 777 VPS-MX; ./VPS-MX
+clear
+rm -rf VPS-MX
+msg -bar
+else
+msg -verm "Procedimiento Cancelado: "
+msg -bar
+fi
+}
 ofus () {
 unset server
 server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
