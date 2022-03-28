@@ -81,8 +81,8 @@ sleep 2s
 else
 msg -verm "Procedimiento Cancelado: "
 msg -bar
-#fi
-#}
+fi
+}
 ofus () {
 unset server
 server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
