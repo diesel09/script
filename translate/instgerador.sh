@@ -4,7 +4,7 @@ SCPT_DIR="/etc/SCRIPT"
 SCPresq="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2RpZXNlbDA5L0FkbWluVlBTMi9tYXN0ZXIvZ2VyYWRvcg=="
 SUB_DOM='base64 -d'
 rm $(pwd)/$0
-msg -bar
+
 msg -ama "HOLA! \033[1;32m[ EJECUTANDO ]  \033[1;33m[\033[1;34m VPS-MX \033[1;33m] \033[1;31m[\033[1;37m 8.4G\033[1;31m]"
 echo " "
 msg -verm "Esta opción necesita autorizacion de IP "
