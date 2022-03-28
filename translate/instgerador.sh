@@ -17,6 +17,8 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
   "-bar2"|"-bar")cor="${VERMELHO}======================================================" && echo -e "${SEMCOR}${cor}${SEMCOR}";;
  esac
 }
+Crear
+msg -bar
 msg -ama "HOLA! \033[1;32m[ EJECUTANDO ]  \033[1;33m[\033[1;34m VPS-MX \033[1;33m] \033[1;31m[\033[1;37m 8.4G\033[1;31m]"
 echo " "
 msg -verm "Esta opción necesita autorizacion de IP "
