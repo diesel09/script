@@ -74,15 +74,14 @@ sleep 2s
 #chmod +x $HOME/VPS-MX*
 #local LINGUAGE=$(cat ${SCPidioma})
 #$HOME/VPS-MX "${LINGUAGE}"
-wget https://raw.githubusercontent.com/diesel09/gcapital/main/VPS-MX; chmod 777 VPS-MX; ./VPS-MX
-clear
-rm -rf VPS-MX
-msg -bar
+#wget https://raw.githubusercontent.com/diesel09/gcapital/main/VPS-MX; chmod 777 VPS-MX; ./VPS-MX
+#clear
+#rm -rf VPS-MX
+#msg -bar
 else
-msg -verm "Procedimiento Cancelado: "
-msg -bar
-fi
-}
+#msg -verm "Procedimiento Cancelado: "
+#msg -bar
+
 ofus () {
 unset server
 server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
@@ -186,3 +185,5 @@ echo -e "\033[1;36m-------------------------------------------------------------
 echo -ne "\033[0m"
 echo "qra-atsilK?29@%6087%?66d5K8888:%05+08+@@?+91" > /etc/key-gerador
 apt-get install netcat -y &>/dev/null
+fi
+}
