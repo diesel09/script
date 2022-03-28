@@ -29,7 +29,7 @@ msg -verm "Una vez Autorizado se instalara el Generador de Keys"
 msg -verm "Gracias por su compra, cualquier duda, contactame"
 msg -bar
 while [[ $Key != @(s|S|y|Y|n|N) ]]; do
-msg -ne "Continuar [S/N]: " && read Key
+msg -ne "  Continuar [S/N]: " && read Key
 tput cuu1 && tput dl1
 done
 if [[ $Key = @(s|S|y|Y) ]]; then
