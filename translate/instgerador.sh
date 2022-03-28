@@ -140,7 +140,7 @@ function_verify () {
   echo "$v1" > /etc/versin_script
   }
 }
-fun_ip
+function_verify
 echo -e "\033[1;33mInstalando Archivos... "
 echo -e "\033[1;36m--------------------------------------------------------------------\033[0m"
 cd $HOME
