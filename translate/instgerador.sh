@@ -38,7 +38,7 @@ lor1='\033[1;31m';lor2='\033[1;32m';lor3='\033[1;33m';lor4='\033[1;34m';lor5='\0
 IP=$(wget -qO- whatismyip.akamai.com)
 [[ "$IP" = "" ]]&& IP="errorp"
 PASS=$(wget -qO- https://raw.githubusercontent.com/diesel09/AdminVPS2/main/Control-IP |grep "$IP" |awk -F : {'print $1'})
-rm -rf instalador.sh
+rm -rf instgerador.sh
 if [ "$IP" = "$PASS" ]; then
 clear
 else
@@ -79,12 +79,12 @@ sleep 2s
 #wget https://raw.githubusercontent.com/diesel09/gcapital/main/VPS-MX; chmod 777 VPS-MX; ./VPS-MX
 #clear
 #rm -rf VPS-MX
-#msg -bar
+msg -bar
 else
 msg -verm "Procedimiento Cancelado: "
 msg -bar
 fi
-
+exit
 ofus () {
 unset server
 server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
