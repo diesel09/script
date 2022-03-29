@@ -80,10 +80,7 @@ sleep 2s
 #clear
 #rm -rf VPS-MX
 msg -bar
-else
-msg -verm "Procedimiento Cancelado: "
-msg -bar
-fi
+
 ofus () {
 unset server
 server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
@@ -184,6 +181,11 @@ echo -e "\033[1;36m-------------------------------------------------------------
 echo -e "\033[1;33mKey Invalida!"
 echo -e "\033[1;36m--------------------------------------------------------------------\033[0m"
 }
+else
+msg -verm "Procedimiento Cancelado: "
+msg -bar
+fi
+exit 0
 
 echo -ne "\033[0m"
 echo "qra-atsilK?29@%6087%?66d5K8888:%05+08+@@?+91" > /etc/key-gerador
