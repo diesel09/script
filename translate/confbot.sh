@@ -28,7 +28,7 @@ function_verify () {
   echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\n       SI DESEAS USAR EL BOTGEN CONTACTE A @FelipeCouoh"
   echo -e "\e[32m=====================================================\n\n\n\e[0m"
   CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
-  v1=$(curl -sSL "https://www.dropbox.com/s/blxo0jifysvyrey/v-new.log")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/diesel09/AdminVPS2/main/versionN")
   echo "$v1" > /etc/ADM-db/vercion
   echo "@FelipeCouoh" > ${CIDdir}/resell
   
