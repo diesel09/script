@@ -18,7 +18,8 @@ function_verify () {
   echo -e "\n\n\n\e[31m====================================================="
   echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!\n     SI DESEAS USAR EL BOTGEN CONTACTE A @FelipeCouoh"
   echo -e "\e[31m=====================================================\n\n\n\e[0m"
-  [[ -d /etc/ADM-db ]] && rm -rf /etc/ADM-db
+  sleep 2s
+[[ -d /etc/ADM-db ]] && rm -rf /etc/ADM-db
 [[ ! -e "/bin/ShellBot.sh" ]] && rm /bin/ShellBot.sh
   exit 1
   } || {
@@ -27,6 +28,7 @@ function_verify () {
   echo -e "\n\n\n\e[32m====================================================="
   echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\n       SI DESEAS USAR EL BOTGEN CONTACTE A @FelipeCouoh"
   echo -e "\e[32m=====================================================\n\n\n\e[0m"
+sleep 2s
   CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
   v1=$(curl -sSL "https://raw.githubusercontent.com/diesel09/AdminVPS2/main/versionN")
   echo "$v1" > /etc/ADM-db/vercion
