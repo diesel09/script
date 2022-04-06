@@ -406,7 +406,7 @@ case $1 in
 "payssl.sh")ARQ="${SCPinst}/";; #Instalacao
 "sdns.sh")ARQ="${SCPinst}/";; #Instalacao
 "sw.sh")ARQ="${SCPinst}/";; #Instalacao
-"sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py")ARQ="${SCPinst}/";; #Instalacao
+"sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py"|"python.py")ARQ="${SCPinst}/";; #Instalacao
 *)ARQ="${SCPfrm}/";; #Ferramentas
 esac
 mv -f ${SCPinstal}/$1 ${ARQ}/$1
